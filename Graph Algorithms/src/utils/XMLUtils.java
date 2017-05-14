@@ -36,16 +36,16 @@ public class XMLUtils {
         int edgeCost = 0;
 
         //Loop through all characters in the buffer
-        while (XMLReader.hasNext()) {
-            int flag = 0;
-            try {
-                flag = XMLReader.next();
-            } catch (XMLStreamException ex) {
-                System.out.println("File is empty!");
-            }
+            while (XMLReader.hasNext()) {
+                int nextTagType = 0;
+                try {
+                    nextTagType = XMLReader.next();
+                } catch (XMLStreamException ex) {
+                    System.out.println("File is empty!");
+                }
 
             //Discrimination between beginning tag, content and end tag
-            switch (flag) {
+            switch (nextTagType) {
                 //Open document
                 case XMLStreamConstants.START_DOCUMENT:
                     System.out.println("Reading document...");
