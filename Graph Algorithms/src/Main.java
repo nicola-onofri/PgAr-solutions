@@ -1,4 +1,5 @@
 import data_structures.Graph;
+import utils.GraphUtils;
 import utils.XMLUtils;
 
 import javax.xml.stream.XMLStreamException;
@@ -18,21 +19,20 @@ public class Main {
         } catch (FileNotFoundException | XMLStreamException e) {
             e.printStackTrace();
         }
-//        System.out.println(g.toString());
+
+        k = GraphUtils.kruskal(g);
 
         try {
-            XMLUtils.writeGraph(g, new File("res/output.xml"), "Test");
+            //XMLUtils.writeGraph(g, new File("res/output.xml"), "Test");
+            XMLUtils.writeGraph(k, new File("res/kruskal.xml"), "Kruskal SST for the graph @" + f.getName());
         } catch (IOException e) {
             e.printStackTrace();
         } catch (XMLStreamException e) {
             e.printStackTrace();
         }
 
-        //TODO implement Kruskal's and Dijkstra's logic
-        k = null;
+        //TODO implement Dijkstra's logic
         d = null;
-
-        //TODO write results on external files
 
     }
 
