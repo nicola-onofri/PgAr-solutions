@@ -13,22 +13,16 @@ public class Problem_A {
 
     /**
      * Calculates the sum of all the multiples of the given number,
-     * below the bound.
+     * below the bound - inefficiently!
      *
-     * @param step  the step between each number
-     * @param bound the bound value
-     * @return the sum of the multiples
+     * @return the sum of the multiples of m1 and m2 below the bound
      */
-    public int sumMultiplesBelow_singleNumber(int step, int bound) {
-        int nTerms = Math.floorDiv(bound, step);
-        return (nTerms * (step + step * nTerms)) / 2;
-    }
-
-    public int sumMultiplesBelow_multipleNumbers(int m1, int m2, int bound){
+    public int dumbResolution() {
         int sum = 0;
-        int s1 = sumMultiplesBelow_singleNumber(m1, bound);
-        int s2 = sumMultiplesBelow_singleNumber(m2, bound);
-        return 2;
+
+        for (int i = 1; i < this.bound; i++)
+            if (i % this.m1 == 0 || i % this.m2 == 0) sum += i;
+        return sum;
     }
 
     //Getters and setters
