@@ -20,10 +20,13 @@ public class MathUtils {
     }
 
     /**
-     * @param m1
-     * @param m2
-     * @param bound
-     * @return
+     * Calculates the sum of all the multiples of the 2 given numbers,
+     * below the bound.
+     *
+     * @param m1    the first number
+     * @param m2    the second number
+     * @param bound the upper bound for the multiples
+     * @return the sum of all the multiples of the 2 given numbers
      */
     public static int sumMultiplesBelow_2numbers(int m1, int m2, int bound) {
         int s1 = sumMultiplesBelow_singleNumber(m1, bound);

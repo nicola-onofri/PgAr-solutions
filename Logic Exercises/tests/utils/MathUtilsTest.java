@@ -65,4 +65,10 @@ public class MathUtilsTest {
     public void lcm_multiples() throws Exception {
         assertEquals(4, MathUtils.lcm(2, 4));
     }
+
+
+    @Test
+    public void sumMultiplesBelow_singleNumber() throws Exception {
+        assertEquals(163845, MathUtils.sumMultiplesBelow_singleNumber(3, 1000));
+    }
 }
